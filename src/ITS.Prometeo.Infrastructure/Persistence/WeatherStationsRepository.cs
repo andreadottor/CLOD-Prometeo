@@ -22,11 +22,11 @@
         {
             const string query = """
                 SELECT 
-                    id as Id,
-                    name as Name,
-                    altitude as Altitude,
-                    longitude as Longitude,
-                    latitude as Latitude,
+                    id           as Id,
+                    name         as Name,
+                    altitude     as Altitude,
+                    longitude    as Longitude,
+                    latitude     as Latitude,
                     station_type as StationType
                 FROM weatherstation
                 """;
@@ -42,15 +42,13 @@
                     altitude,
                     longitude,
                     latitude,
-                    station_type
-                    )
-                    VALUES (
+                    station_type)
+                VALUES (
                     @Name,
                     @Altitude,
                     @Longitude,
                     @Latitude,
-                    @StationType
-                    );
+                    @StationType);
                 """;
 
             using var connection = new NpgsqlConnection(_connectionString);
