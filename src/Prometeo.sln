@@ -5,13 +5,14 @@ VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITS.Prometeo.API", "ITS.Prometeo.API\ITS.Prometeo.API.csproj", "{0A20AD4B-AC84-4A27-8398-EE4F7E4E25E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITS.Prometeo.ApplicationCore", "ITS.Prometeo.ApplicationCore\ITS.Prometeo.ApplicationCore.csproj", "{BA5683E1-A1A9-460C-BA3E-DE58B44E5F7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITS.Prometeo.ApplicationCore", "ITS.Prometeo.ApplicationCore\ITS.Prometeo.ApplicationCore.csproj", "{BA5683E1-A1A9-460C-BA3E-DE58B44E5F7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITS.Prometeo.Infrastructure", "ITS.Prometeo.Infrastructure\ITS.Prometeo.Infrastructure.csproj", "{B6E520EE-F46D-4D84-B8DA-2854ECF9C293}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITS.Prometeo.Infrastructure", "ITS.Prometeo.Infrastructure\ITS.Prometeo.Infrastructure.csproj", "{B6E520EE-F46D-4D84-B8DA-2854ECF9C293}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{52442482-4C89-4D5E-BBAF-4598AE63CEFF}"
 	ProjectSection(SolutionItems) = preProject
 		..\.gitignore = ..\.gitignore
+		..\db\database.sql = ..\db\database.sql
 		..\LICENSE = ..\LICENSE
 		..\README.md = ..\README.md
 	EndProjectSection
