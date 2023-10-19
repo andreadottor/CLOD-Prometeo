@@ -5,7 +5,9 @@
     using ITS.Prometeo.ApplicationCore.Persistence;
     using Microsoft.Extensions.Configuration;
     using Npgsql;
+    using System.Collections.Generic;
     using System.Threading.Tasks;
+    using static System.Collections.Specialized.BitVector32;
 
     internal class WeatherStationsRepository : IWeatherStationsRepository
     {
@@ -14,6 +16,22 @@
         public WeatherStationsRepository(IConfiguration configuration)
         {
             _connectionString = configuration.GetConnectionString("db");
+        }
+
+        public async Task<IEnumerable<WeatherStation>> GetListAsync()
+        {
+            const string query = """
+                SELECT 
+                    id as Id,
+                    name as Name,
+                    altitude as Altitude,
+                    longitude as Longitude,
+                    latitude as Latitude,
+                    station_type as StationType
+                FROM weatherstation
+                """;
+            using var connection = new NpgsqlConnection(_connectionString);
+            return await connection.QueryAsync< WeatherStation>(query);
         }
 
         public async Task InsertAsync(WeatherStation station)
