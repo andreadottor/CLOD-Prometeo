@@ -2,6 +2,7 @@
 
 using ITS.Prometeo.ApplicationCore.Entities;
 using ITS.Prometeo.ApplicationCore.Persistence;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 internal class WeatherStationsService : IWeatherStationsService
@@ -11,6 +12,11 @@ internal class WeatherStationsService : IWeatherStationsService
     public WeatherStationsService(IWeatherStationsRepository weatherStationsRepository)
     {
         _weatherStationsRepository = weatherStationsRepository;
+    }
+
+    public Task<IEnumerable<WeatherStation>> GetListAsync()
+    {
+        return _weatherStationsRepository.GetListAsync();
     }
 
     public Task InsertAsync(WeatherStation station)

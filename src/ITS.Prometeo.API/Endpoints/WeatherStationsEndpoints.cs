@@ -12,7 +12,9 @@ public static class WeatherStationsEndpoints
         group.MapPost("/", InsertWeatherStation)
              .WithName(nameof(InsertWeatherStation))
              .WithOpenApi();
-
+        group.MapGet("/", GetWeatherStationList)
+             .WithName(nameof(GetWeatherStationList))
+             .WithOpenApi();
         return endpoints;
     }
 
@@ -20,5 +22,11 @@ public static class WeatherStationsEndpoints
     {
         await weatherStationsService.InsertAsync(station);
         return Results.NoContent();
+    }
+
+    private static async Task<IResult> GetWeatherStationList(IWeatherStationsService weatherStationsService)
+    {
+        var list = await weatherStationsService.GetListAsync();
+        return Results.Ok(list);
     }
 }
