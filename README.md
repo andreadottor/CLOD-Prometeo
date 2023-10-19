@@ -1,2 +1,2 @@
-# CLOD-Prometeo
+# Project Prometeo
 Gestione stazioni meteo

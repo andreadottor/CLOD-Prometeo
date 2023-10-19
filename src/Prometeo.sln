@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITS.Prometeo.API", "ITS.Prometeo.API\ITS.Prometeo.API.csproj", "{0A20AD4B-AC84-4A27-8398-EE4F7E4E25E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITS.Prometeo.ApplicationCore", "ITS.Prometeo.ApplicationCore\ITS.Prometeo.ApplicationCore.csproj", "{BA5683E1-A1A9-460C-BA3E-DE58B44E5F7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITS.Prometeo.Infrastructure", "ITS.Prometeo.Infrastructure\ITS.Prometeo.Infrastructure.csproj", "{B6E520EE-F46D-4D84-B8DA-2854ECF9C293}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{52442482-4C89-4D5E-BBAF-4598AE63CEFF}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A20AD4B-AC84-4A27-8398-EE4F7E4E25E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A20AD4B-AC84-4A27-8398-EE4F7E4E25E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A20AD4B-AC84-4A27-8398-EE4F7E4E25E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A20AD4B-AC84-4A27-8398-EE4F7E4E25E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA5683E1-A1A9-460C-BA3E-DE58B44E5F7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA5683E1-A1A9-460C-BA3E-DE58B44E5F7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA5683E1-A1A9-460C-BA3E-DE58B44E5F7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA5683E1-A1A9-460C-BA3E-DE58B44E5F7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6E520EE-F46D-4D84-B8DA-2854ECF9C293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6E520EE-F46D-4D84-B8DA-2854ECF9C293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6E520EE-F46D-4D84-B8DA-2854ECF9C293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6E520EE-F46D-4D84-B8DA-2854ECF9C293}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DCC01641-81BD-48DC-949D-E309BB7E1915}
+	EndGlobalSection
+EndGlobal
