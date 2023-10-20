@@ -16,6 +16,25 @@
             _connectionString = configuration.GetConnectionString("db");
         }
 
+        public async Task<WeatherStation?> GetByIdAsync(int id)
+        {
+            const string query = """
+                SELECT 
+                    id           as Id,
+                    name         as Name,
+                    altitude     as Altitude,
+                    longitude    as Longitude,
+                    latitude     as Latitude,
+                    station_type as StationType
+                FROM weatherstation
+                WHERE
+                    id = @id
+                """;
+            using var connection = new NpgsqlConnection(_connectionString);
+            return await connection.QueryFirstOrDefaultAsync<WeatherStation>(query, new {id});
+
+        }
+
         public async Task<IEnumerable<WeatherStation>> GetListAsync()
         {
             const string query = """
@@ -52,5 +71,8 @@
             using var connection = new NpgsqlConnection(_connectionString);
             await connection.ExecuteAsync(query, station);
         }
+
+
+
     }
 }
