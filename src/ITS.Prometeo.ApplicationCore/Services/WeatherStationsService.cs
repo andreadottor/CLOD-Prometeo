@@ -14,6 +14,11 @@ internal class WeatherStationsService : IWeatherStationsService
         _weatherStationsRepository = weatherStationsRepository;
     }
 
+    public Task<WeatherStation?> GetByIdAsync(int id)
+    {
+       return _weatherStationsRepository.GetByIdAsync(id);
+    }
+
     public Task<IEnumerable<WeatherStation>> GetListAsync()
     {
         return _weatherStationsRepository.GetListAsync();
