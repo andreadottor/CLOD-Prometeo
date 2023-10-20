@@ -55,4 +55,9 @@ internal class WeatherStationsService : IWeatherStationsService
     {
         return _weatherStationsRepository.UpdateAsync(station);
     }
+
+    public Task DeleteDetectionAsync(long id)
+    {
+        return _weatherDetectionsRepository.DeleteAsync(id);
+    }
 }
