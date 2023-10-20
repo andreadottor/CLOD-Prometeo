@@ -16,6 +16,9 @@ public static class WeatherDetectionEndpoints
         group.MapGet("/", GetWeatherDetectionList)
              .WithName(nameof(GetWeatherDetectionList))
              .WithOpenApi();
+        group.MapGet("/{id}", GetDetection)
+             .WithName(nameof(GetDetection))
+             .WithOpenApi();
 
         return endpoints;
     }
@@ -30,5 +33,13 @@ public static class WeatherDetectionEndpoints
     {
         var list = await weatherStationsService.GetDetectionListAsync();
         return Results.Ok(list);
+    }
+    private static async Task<IResult> GetDetection(long id, IWeatherStationsService weatherStationsService)
+    {
+        var station = await weatherStationsService.GetDetectionByIdAsync(id);
+        if (station is not null)
+            return Results.Ok(station);
+        else
+            return Results.NotFound();
     }
 }
