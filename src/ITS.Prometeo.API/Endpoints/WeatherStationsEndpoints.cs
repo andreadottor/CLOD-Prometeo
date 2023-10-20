@@ -18,6 +18,9 @@ public static class WeatherStationsEndpoints
         group.MapGet("/{id}", GetWeatherStation)
              .WithName(nameof(GetWeatherStation))
              .WithOpenApi();
+        group.MapPut("/{id}", UpdateWeatherStation)
+             .WithName(nameof(UpdateWeatherStation))
+             .WithOpenApi();
         return endpoints;
     }
 
@@ -39,5 +42,12 @@ public static class WeatherStationsEndpoints
             return Results.Ok(station);
         else
             return Results.NotFound();
+    }
+
+    private static async Task<IResult> UpdateWeatherStation(int id, WeatherStation station, IWeatherStationsService weatherStationsService)
+    {
+        station.Id = id;
+        await weatherStationsService.UpdateAsync(station);
+        return Results.NoContent();
     }
 }

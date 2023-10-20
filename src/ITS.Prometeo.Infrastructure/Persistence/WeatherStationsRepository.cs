@@ -72,7 +72,22 @@
             await connection.ExecuteAsync(query, station);
         }
 
+        public async Task UpdateAsync(WeatherStation station)
+        {
+            const string query = """
+                UPDATE weatherstation 
+                SET
+                    name =          @Name,
+                    altitude =      @Altitude,
+                    longitude =     @Longitude,
+                    latitude =      @Latitude,
+                    station_type =  @StationType
+                WHERE
+                    id = @Id
+                """;
 
-
+            using var connection = new NpgsqlConnection(_connectionString);
+            await connection.ExecuteAsync(query, station);
+        }
     }
 }
