@@ -7,8 +7,6 @@
     using Npgsql;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using static System.Collections.Specialized.BitVector32;
-
     internal class WeatherStationsRepository : IWeatherStationsRepository
     {
         private readonly string _connectionString;
