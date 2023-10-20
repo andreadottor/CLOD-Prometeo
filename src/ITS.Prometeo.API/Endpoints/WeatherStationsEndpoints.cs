@@ -1,5 +1,6 @@
 ﻿using ITS.Prometeo.ApplicationCore.Entities;
 using ITS.Prometeo.ApplicationCore.Services;
+using static System.Collections.Specialized.BitVector32;
 
 namespace ITS.Prometeo.API.Endpoints;
 
@@ -21,7 +22,16 @@ public static class WeatherStationsEndpoints
         group.MapPut("/{id}", UpdateWeatherStation)
              .WithName(nameof(UpdateWeatherStation))
              .WithOpenApi();
+        group.MapDelete("/{id}", DeleteWeatherStation)
+             .WithName(nameof(DeleteWeatherStation))
+             .WithOpenApi();
         return endpoints;
+    }
+
+    private static async Task<IResult> DeleteWeatherStation(int id, IWeatherStationsService weatherStationsService)
+    {
+        await weatherStationsService.DeleteAsync(id);
+        return Results.NoContent();
     }
 
     private static async Task<IResult> InsertWeatherStation(WeatherStation station, IWeatherStationsService weatherStationsService)
