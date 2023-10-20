@@ -10,6 +10,7 @@ public static class DependencyInjection
     {
         services.AddScoped<IWeatherForecastRepository, WeatherForecastRepository>();
         services.AddScoped<IWeatherStationsRepository, WeatherStationsRepository>();
+        services.AddScoped<IWeatherDetectionRepository, WeatherDetectionRepository>();
         return services;
     }
 }

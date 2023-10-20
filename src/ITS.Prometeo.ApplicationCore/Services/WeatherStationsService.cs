@@ -8,10 +8,12 @@ using System.Threading.Tasks;
 internal class WeatherStationsService : IWeatherStationsService
 {
     private readonly IWeatherStationsRepository _weatherStationsRepository;
+    private readonly IWeatherDetectionRepository _weatherDetectionsRepository;
 
-    public WeatherStationsService(IWeatherStationsRepository weatherStationsRepository)
+    public WeatherStationsService(IWeatherStationsRepository weatherStationsRepository, IWeatherDetectionRepository weatherDetectionsRepository)
     {
         _weatherStationsRepository = weatherStationsRepository;
+        _weatherDetectionsRepository = weatherDetectionsRepository;
     }
 
     public Task DeleteAsync(int id)
@@ -32,6 +34,11 @@ internal class WeatherStationsService : IWeatherStationsService
     public Task InsertAsync(WeatherStation station)
     {
         return _weatherStationsRepository.InsertAsync(station);
+    }
+
+    public Task InsertAsync(WeatherDetection detection)
+    {
+        return _weatherDetectionsRepository.InsertAsync(detection);
     }
 
     public Task UpdateAsync(WeatherStation station)

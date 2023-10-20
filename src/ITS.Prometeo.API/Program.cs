@@ -25,6 +25,7 @@ app.UseHttpsRedirection();
 
 app.MapWeatherForecastEndpoints();
 app.MapWeatherStationsEndpoints();
+app.MapWeatherDetectionsEndpoints();
 
 app.Run();
 
