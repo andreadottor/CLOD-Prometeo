@@ -19,6 +19,9 @@ public static class WeatherDetectionEndpoints
         group.MapGet("/{id}", GetDetection)
              .WithName(nameof(GetDetection))
              .WithOpenApi();
+        group.MapDelete("/{id}", DeleteWeatherDetection)
+             .WithName(nameof(DeleteWeatherDetection))
+             .WithOpenApi();
 
         return endpoints;
     }
@@ -41,5 +44,11 @@ public static class WeatherDetectionEndpoints
             return Results.Ok(station);
         else
             return Results.NotFound();
+    }
+
+    private static async Task<IResult> DeleteWeatherDetection(long id, IWeatherStationsService weatherStationsService)
+    {
+        await weatherStationsService.DeleteDetectionAsync(id);
+        return Results.NoContent();
     }
 }

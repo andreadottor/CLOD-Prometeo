@@ -17,6 +17,16 @@ internal class WeatherDetectionRepository : IWeatherDetectionRepository
         _connectionString = configuration.GetConnectionString("db");
     }
 
+    public async Task DeleteAsync(long id)
+    {
+        const string query = """
+                DELETE FROM weatherdetection
+                WHERE id = @id;
+                """;
+        using var connection = new NpgsqlConnection(_connectionString);
+        await connection.ExecuteAsync(query, new { id });
+    }
+
     public async Task<WeatherDetection?> GetByIdAsync(long id)
     {
         const string query = """
