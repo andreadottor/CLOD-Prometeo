@@ -28,4 +28,9 @@ internal class WeatherStationsService : IWeatherStationsService
     {
         return _weatherStationsRepository.InsertAsync(station);
     }
+
+    public Task UpdateAsync(WeatherStation station)
+    {
+        return _weatherStationsRepository.UpdateAsync(station);
+    }
 }

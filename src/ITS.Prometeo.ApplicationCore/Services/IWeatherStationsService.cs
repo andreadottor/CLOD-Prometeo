@@ -8,5 +8,6 @@ public interface IWeatherStationsService
     Task InsertAsync(WeatherStation station);
     Task<IEnumerable<WeatherStation>> GetListAsync();
     Task<WeatherStation?> GetByIdAsync(int id);
+    Task UpdateAsync(WeatherStation station);
 
 }
