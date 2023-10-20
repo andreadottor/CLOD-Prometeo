@@ -10,5 +10,6 @@ public interface IWeatherStationsService
     Task<WeatherStation?> GetByIdAsync(int id);
     Task UpdateAsync(WeatherStation station);
     Task DeleteAsync(int id);
+    Task InsertAsync(WeatherDetection detection);
 
 }
