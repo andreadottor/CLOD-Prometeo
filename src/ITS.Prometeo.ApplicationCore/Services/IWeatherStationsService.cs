@@ -9,5 +9,6 @@ public interface IWeatherStationsService
     Task<IEnumerable<WeatherStation>> GetListAsync();
     Task<WeatherStation?> GetByIdAsync(int id);
     Task UpdateAsync(WeatherStation station);
+    Task DeleteAsync(int id);
 
 }

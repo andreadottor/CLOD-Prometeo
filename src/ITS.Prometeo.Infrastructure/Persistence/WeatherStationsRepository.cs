@@ -16,6 +16,16 @@
             _connectionString = configuration.GetConnectionString("db");
         }
 
+        public async Task DeleteAsync(int id)
+        {
+            const string query = """
+                DELETE FROM weatherstation
+                WHERE id = @id;
+                """;
+            using var connection = new NpgsqlConnection(_connectionString);
+            await connection.ExecuteAsync(query, new { id });
+        }
+
         public async Task<WeatherStation?> GetByIdAsync(int id)
         {
             const string query = """
