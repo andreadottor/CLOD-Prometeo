@@ -11,5 +11,6 @@ public interface IWeatherStationsService
     Task UpdateAsync(WeatherStation station);
     Task DeleteAsync(int id);
     Task InsertAsync(WeatherDetection detection);
+    Task<IEnumerable<WeatherDetection>> GetDetectionListAsync();
 
 }
