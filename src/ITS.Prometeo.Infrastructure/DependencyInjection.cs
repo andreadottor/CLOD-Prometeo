@@ -9,8 +9,11 @@ public static class DependencyInjection
     public static IServiceCollection AddInfrastructure(this IServiceCollection services)
     {
         services.AddScoped<IWeatherForecastRepository, WeatherForecastRepository>();
-        services.AddScoped<IWeatherStationsRepository, WeatherStationsRepository>();
-        services.AddScoped<IWeatherDetectionRepository, WeatherDetectionRepository>();
+        //services.AddScoped<IWeatherStationsRepository, WeatherStationsNpgsqlRepository>();
+        services.AddScoped<IWeatherStationsRepository, WeatherStationsSqlRepository>();
+        //services.AddScoped<IWeatherDetectionRepository, WeatherDetectionNpgsqlRepository>();
+        services.AddScoped<IWeatherDetectionRepository, WeatherDetectionSqlRepository>();
+        
         return services;
     }
 }

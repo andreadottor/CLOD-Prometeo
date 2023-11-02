@@ -8,11 +8,11 @@ using static System.Collections.Specialized.BitVector32;
 
 namespace ITS.Prometeo.Infrastructure.Persistence;
 
-internal class WeatherDetectionRepository : IWeatherDetectionRepository
+internal class WeatherDetectionNpgsqlRepository : IWeatherDetectionRepository
 {
     private readonly string _connectionString;
 
-    public WeatherDetectionRepository(IConfiguration configuration)
+    public WeatherDetectionNpgsqlRepository(IConfiguration configuration)
     {
         _connectionString = configuration.GetConnectionString("db");
     }

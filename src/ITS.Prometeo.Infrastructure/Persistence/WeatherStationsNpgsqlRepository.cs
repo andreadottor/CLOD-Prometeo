@@ -7,11 +7,11 @@
     using Npgsql;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    internal class WeatherStationsRepository : IWeatherStationsRepository
+    internal class WeatherStationsNpgsqlRepository : IWeatherStationsRepository
     {
         private readonly string _connectionString;
 
-        public WeatherStationsRepository(IConfiguration configuration)
+        public WeatherStationsNpgsqlRepository(IConfiguration configuration)
         {
             _connectionString = configuration.GetConnectionString("db");
         }
